@@ -15,33 +15,16 @@
 </template>
 
 <script>
-import api from '@/api';
 export default {
-    data(){
-        return{
-            records:{}
+    props:{
+        records:{
+            type:Object,
+            default:()=>{
+                return {}
         }
-    },
-    mounted(){
-        api.getNcov({
-            key:'62e34ad34025d5d5127135efa58d4ca8'
-        }).then(res=>{
-            //console.log(res.data)
-            if(res.status===200){
-                this.records = {
-                    new1:res.data.newslist[0].news[0].summary,
-                    new2:res.data.newslist[0].news[1].summary,
-                    new3:res.data.newslist[0].news[2].summary,
-                    new4:res.data.newslist[0].news[3].summary,
-                    new5:res.data.newslist[0].news[4].summary,
-
-
-                }
-            }
-        }).catch(error=>{
-            console.log(error)
-        })
     }
+}
+   
 }
 </script>
 
