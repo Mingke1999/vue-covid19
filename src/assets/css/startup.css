@@ -1,91 +1,210 @@
-@charset "UTF-8";
-/*css 初始化 */
-html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
-    margin: 0;
-    padding: 0;
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    font-size: 100px;
 }
 
-fieldset, img, input, button {             /*fieldset组合表单中的相关元素*/
-    border: none;
-    padding: 0;
-    margin: 0;
-    outline-style: none;
-}
-
-ul, ol {
-    list-style: none;                /*no list style*/
-}
-
+/* 禁止缩放表单 */
+input[type=“submit”],
+input[type=“reset”],
+input[type=“button”],
 input {
-    padding-top: 0;
-    padding-bottom: 0;
-    font-family: "SimSun", "宋体";
-}
-
-select, input {
-    vertical-align: middle;
-}
-
-select, input, textarea {
-    font-size: 12px;
-    margin: 0;
-}
-
-textarea {
     resize: none;
+    border: none;
 }
 
-/*防止多行文本框拖动*/
+/* 取消链接高亮 */
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: .12rem;
+}
+
+/* 设置HTML5元素为块 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
 img {
-    border: 0;
-    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    width: auto\9;
+    display: block;
+    -ms-interpolation-mode: bicubic;
 }
 
-/*  去掉图片低测默认的3像素空白缝隙*/
-table {
-    border-collapse: collapse;            /*合并外边线*/
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
 }
-
 
 body {
-    font: 12px/150% Arial, Verdana, "\5b8b\4f53";    /*宋体，Unicode，统一码*/
-    color: #666;
-    background: #fff
+    font: 12px/1.5 ‘Microsoft YaHei’, ‘宋体’, Tahoma, Arial, sans-serif;
+    color: #555;
+    background-color: #F7F7F7;
 }
 
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
+em,
+i {
+    font-style: normal;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+strong {
+    font-weight: normal;
 }
 
 .clearfix:after {
+    content: “”;
+    display: block;
+    visibility: hidden;
+    height: 0;
     clear: both;
 }
 
 .clearfix {
-    *zoom: 1; /*IE/7/6*/
+    zoom: 1;
 }
 
 a {
-    color: #666;
     text-decoration: none;
+    color: #969696;
+    font-family: ‘Microsoft YaHei’, Tahoma, Arial, sans-serif;
 }
 
 a:hover {
-    color: #C81623;
+    text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    text-decoration: none;
-    font-weight: normal;
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 100%;
+    font-family: ‘Microsoft YaHei’;
 }
 
-s, i, em {
-    font-style: normal;
-    text-decoration: none;
+img {
+    border: none;
 }
 
-.col-red {
-    color: #C81623 !important;
+input {
+    font-family: ‘Microsoft YaHei’;
+}
+
+.one-txt-cut {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.txt-cut {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+a:link,
+a:active,
+a:visited,
+a:hover {
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }

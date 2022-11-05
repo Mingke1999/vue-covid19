@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HeaderVue/>
+    <CovidInfoVue/>
   </div>
 </template>
 
@@ -8,11 +9,13 @@
 // @ is an alias to /src
 
 import HeaderVue from '@/components/Header.vue';
+import CovidInfoVue from '@/components/CovidInfo.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HeaderVue
+    HeaderVue,
+    CovidInfoVue
   }
 }
 </script>
