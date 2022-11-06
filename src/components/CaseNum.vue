@@ -2,7 +2,7 @@
   <div class="case-num">
     <div class="container">
         <div class="title">
-            <span>Up Today 2022-11-05 11:16 statistics</span>
+            <span>Last Update {{dateForm(cases.modifyTime)}} CHINA</span>
         </div>
     </div>
     <div class="num">
@@ -92,6 +92,16 @@ export default {
     methods:{
         npJudge(num){
             return num >= 0 ? "+"+num :num
+        },
+        dateForm(date){
+            var date = new Date(date);
+            var YY = date.getFullYear() + '-';
+            var MM = (date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1)+'-': (date.getMonth() + 1) + '-'; // 0-11 + 1
+            var DD = (date.getDate()+1) < 10 ? '0' + (date.getDate()+1) + ' ': (date.getDate()+1) + ' ';
+            var hh = (date.getHours()) < 10 ? '0' + (date.getHours())+':' : (date.getHours())+':';
+            var mm = (date.getMinutes()) < 10 ? '0' + (date.getMinutes())+':' : (date.getMinutes())+':';
+            
+            return YY + MM + DD + hh + mm
         }
     }
 

@@ -41,6 +41,7 @@ export default {
                     new5:res.data.newslist[0].news[4].summary,
                 }
                 this.cases ={
+                  modifyTime:res.data.newslist[0].desc.modifyTime,
                   currentConfirmedCount:res.data.newslist[0].desc.currentConfirmedCount,
                   confirmedCount:res.data.newslist[0].desc.confirmedCount,
                   suspectedCount:res.data.newslist[0].desc.suspectedCount,
