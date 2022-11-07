@@ -24,6 +24,33 @@ const install = function(Vue){
                               ]
                         }
                         myChart.setOption(option);
+                    },
+                    chinamap:function(id){
+                        var chartDom = document.getElementById(id);
+                        var myChart = echarts.init(chartDom);
+                        var option = {
+                            tooltip: {
+                                trigger: 'item',
+                                formatter: '{b}<br/>{c} (p / km2)'
+                              }, 
+                              visualMap: {
+                                min: 800,
+                                max: 50000,
+                                text: ['High', 'Low'],
+                                realtime: false,
+                                calculable: true,
+                                inRange: {
+                                  color: ['lightskyblue', 'yellow', 'orangered']
+                                }
+                              },
+                              series:[{
+                                name:'province',
+                                type:'map',
+                                map:'china',
+                                roam:false, //no zoom in or zoom out
+                              }]
+                        }
+                        myChart.setOption(option);
                     }
                 }
             }
