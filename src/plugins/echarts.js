@@ -5,7 +5,7 @@ const install = function(Vue){
         $charts:{
             get(){
                 return{
-                    chinamap:function(id){
+                    chinamap:function(id,data){
                         var chartDom = document.getElementById(id);
                         var myChart = echarts.init(chartDom);
                         var option = {
@@ -43,10 +43,7 @@ const install = function(Vue){
                                 borderWidth:0
                               }
                             },
-                            data:[
-                              {name:'辽宁',value:10},
-                              {name:'湖南',value:100}
-                             ]
+                            data
                            }],
                            visualMap:[{
                             orient:'vertical',

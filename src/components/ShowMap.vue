@@ -1,15 +1,38 @@
 <template>
   <div>
-    <p class="title"><i></i>Cases Distribution</p>
+    <p class="title"><i></i>Cases Distribution {{updateTime}}</p>
     <div class="map" id="map"></div>
   </div>
 </template>
 
 <script>
+import api from '@/api';
 export default {
   name: 'ShowMap',
+  data(){
+    return{
+      updateTime:''
+    }
+  },
   mounted(){
-    this.$charts.chinamap("map")
+   
+    api.getProvince().then(
+      res=>{
+        //console.log(res.data.data.statisGradeCityDetail.length)
+        let provinces = [];
+        for(let i=0;i<res.data.data.diseaseh5Shelf.areaTree[0].children.length;i++){
+          var temp = {
+            name:res.data.data.diseaseh5Shelf.areaTree[0].children[i].name,
+            value:res.data.data.diseaseh5Shelf.areaTree[0].children[i].today.confirm,
+          }
+          provinces.push(temp);
+        }
+        this.$charts.chinamap("map",provinces)
+        this.updateTime = res.data.data.diseaseh5Shelf.lastUpdateTime
+      }
+    ).catch(err=>{
+      console.log(err)
+    })
   }
 }
 </script>
