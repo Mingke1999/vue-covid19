@@ -3,6 +3,7 @@
     <HeaderVue/>
     <CovidInfoVue :records="records"/>
     <CaseNum :cases="cases"/>
+    <ShowMap/>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import HeaderVue from '@/components/Header.vue';
 import CovidInfoVue from '@/components/CovidInfo.vue';
 import CaseNum from '@/components/CaseNum.vue';
 import api from '@/api';
+import ShowMap from '@/components/ShowMap.vue';
 
 export default {
   name: 'HomeView',
@@ -20,6 +22,7 @@ export default {
     HeaderVue,
     CovidInfoVue,
     CaseNum,
+    ShowMap,
   },
   data(){
     return{
