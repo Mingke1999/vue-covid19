@@ -13,7 +13,7 @@ const install = function(Vue){
                               triggerOn:"click",
                               enterable:true,
                               formatter(data){
-                                console.log(data)
+                                return data.name + '<br> case: ' + data.value
                               },
                            },
                            series:[{
@@ -42,9 +42,43 @@ const install = function(Vue){
                                 shadowBlur:20,
                                 borderWidth:0
                               }
-                            }
-                           }]
-
+                            },
+                            data:[
+                              {name:'辽宁',value:10},
+                              {name:'湖南',value:100}
+                             ]
+                           }],
+                           visualMap:[{
+                            orient:'vertical',
+                            type:'piecewise',
+                            pieces:[
+                              {
+                                min:0,
+                                max:0,
+                                color:'#fff'
+                              },
+                              {
+                                min:1,
+                                max:10,
+                                color:'#fdfdcf'
+                              },
+                              {
+                                min:11,
+                                max:100,
+                                color:'#fe9e83'
+                              },
+                              {
+                                min:101,
+                                max:1000,
+                                color:'#e55a4e'
+                              },
+                              {
+                                min:1001,
+                                max:10000,
+                                color:'#4f070d'
+                              },
+                            ]
+                           }],
                            
                         }
                         myChart.setOption(option);
