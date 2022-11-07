@@ -1,12 +1,26 @@
-<template>
-  <div>
-    <h3>Content</h3>
-  </div>
-</template>
-
 <script>
 export default {
-    name:'Content'
+    name:'Content',
+    props:{
+        paths:{
+            type:Array,
+            default:()=>{
+                return []
+            }
+        }
+    },
+    render(){
+        return(
+            <div>
+                {
+                    this.paths.map((ele,index)=>{
+                        return ele.isActive ? ele.$slots.default : ''
+                        //return <div style={{ display: ele.isActive ? 'block':'none'}}>{ele.$slots.default} </div>
+                    })
+                }
+            </div>
+        )
+    }
 }
 </script>
 

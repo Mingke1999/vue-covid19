@@ -5,8 +5,16 @@ export default {
     props:{
         currentIndex:{
             type:[String,Number],
-            default:0
+            default:1
         }
+    },
+    data(){
+        return{
+            paths:[]
+        }
+    },
+    components:{
+        Content
     },
     methods:{
         getIndex(index){
@@ -18,6 +26,7 @@ export default {
         return(
             <div>
                 <ul class="tabs-header">{this.$slots.default}</ul>
+                <Content paths={this.paths}/>
             </div>
         )
            

@@ -1,7 +1,16 @@
 <template>
   <div>
     <p class="title"><i></i>Cases Distribution {{updateTime}}</p>
-    <div class="map" id="map"></div>
+    <Tabs :currentIndex="currentIndex" @switchIndex="makeChange">
+      <Tab index="1" label="CHINA">
+        <div class="map" id="map"></div>
+      </Tab>
+      <Tab index="2" label="GLOBAL">
+        <div>
+          Content GLOBAL
+        </div>
+      </Tab>
+    </Tabs>
   </div>
 </template>
 
@@ -11,11 +20,17 @@ export default {
   name: 'ShowMap',
   data(){
     return{
-      updateTime:''
+      updateTime:'',
+      currentIndex:1
+    }
+  },
+  methods:{
+    makeChange(index){
+      //console.log(index)
+      this.currentIndex = index
     }
   },
   mounted(){
-   
     api.getProvince().then(
       res=>{
         //console.log(res.data.data.statisGradeCityDetail.length)

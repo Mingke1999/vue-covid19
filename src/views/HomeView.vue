@@ -1,21 +1,9 @@
 <template>
   <div class="home">
     <HeaderVue/>
-    <!-- <CovidInfoVue :records="records"/>
+    <CovidInfoVue :records="records"/>
     <CaseNum :cases="cases"/>
-    <ShowMap/> -->
-    <Tabs :currentIndex="currentIndex" @switchIndex="makeChange">
-      <Tab index="1" label="CHINA">
-        <div>
-          Content A
-        </div>
-      </Tab>
-      <Tab index="2" label="GLOBAL">
-        <div>
-          Content B
-        </div>
-      </Tab>
-    </Tabs>
+    <ShowMap/>
   </div>
 </template>
 
@@ -40,13 +28,6 @@ export default {
     return{
       records:{},
       cases:{},
-      currentIndex:1
-    }
-  },
-  methods:{
-    makeChange(index){
-      //console.log(index)
-      this.currentIndex = index
     }
   },
   mounted(){

@@ -7,8 +7,8 @@ export default {
             default:'tab'
         },
         index:{
-            type:[Number,String],
-            default:0
+            type:[String,Number],
+            default:1
         }
     },
     computed:{
@@ -22,9 +22,10 @@ export default {
             this.$parent.getIndex(this.index)
         }
     },
-    // mounted(){
-    //     console.log(this.$parent.currentIndex)
-    // },
+    mounted(){
+        //console.log(this.$parent.currentIndex)
+        this.$parent.paths.push(this)
+    },
     render(){
         //console.log(this.isActive)
         let classNames = {
