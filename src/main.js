@@ -5,7 +5,9 @@ import router from './router';
 import './assets/css/startup.css';
 import Echarts from './plugins/echarts';
 import '../node_modules/echarts/map/js/china';
+import Tabs from './components/maps';
 
+Vue.use(Tabs)
 Vue.use(Echarts);
 Vue.config.productionTip = false
 

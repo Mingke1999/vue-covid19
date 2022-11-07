@@ -17,3 +17,9 @@
 > avoid using axios multiple times in sibling component, make request at parent and passing value to children props could be used.
 - 1. declare data in parent as object, receiving value from axios.   ``` <CaseNum :cases="cases"/>```
 - 2. children props get data ```props:{ cases:{ type:Object,default:()=>{ return {} } } }  {{cases.currentConfirmedCount}}```
+
+## Component Tab Packaging
+- tabs->tab: slot
+- tabs->content reference
+- tab->content slot
+> 1. <div>Slots<div> 2. children->$parents 3. props 4. $emit
